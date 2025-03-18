@@ -41,6 +41,7 @@ class _AudioBoosterAppState extends State<AudioBoosterApp> {
 
   @override
   Widget build(BuildContext context) {
+    var deviceHeight = MediaQuery.of(context).size.height;
     return CupertinoApp(
       title: 'NoBS Audio Booster',
       home: CupertinoPageScaffold(
@@ -50,7 +51,7 @@ class _AudioBoosterAppState extends State<AudioBoosterApp> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Spacer(),
+              SizedBox(height: deviceHeight * 0.3),
               Text("Volume boost level"),
               CupertinoSlider(
                 value: boostLevel,
@@ -67,6 +68,7 @@ class _AudioBoosterAppState extends State<AudioBoosterApp> {
                 },
               ),
               SizedBox(height: 20),
+              Text("Disable/Enable"),
               CupertinoSwitch(
                 value: isBoostActive,
                 onChanged: (value) {
