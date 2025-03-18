@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -40,17 +41,18 @@ class _AudioBoosterAppState extends State<AudioBoosterApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return CupertinoApp(
       title: 'NoBS Audio Booster',
-      home: Scaffold(
-        appBar: AppBar(title: Text('NoBS Audio Booster')),
-        body: Padding(
+      home: CupertinoPageScaffold(
+        child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Spacer(),
               Text("Volume boost level"),
-              Slider(
+              CupertinoSlider(
                 value: boostLevel,
                 min: 0,
                 max: 8000,
@@ -65,8 +67,7 @@ class _AudioBoosterAppState extends State<AudioBoosterApp> {
                 },
               ),
               SizedBox(height: 20),
-              SwitchListTile(
-                title: Text('Enable/Disable boost'),
+              CupertinoSwitch(
                 value: isBoostActive,
                 onChanged: (value) {
                   setState(() {
@@ -81,16 +82,8 @@ class _AudioBoosterAppState extends State<AudioBoosterApp> {
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 16.0),
-              ElevatedButton(
+              CupertinoButton(
                 onPressed: launchDonationPage,
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.amber[800],
-                  padding: EdgeInsets.symmetric(vertical: 12, horizontal: 24),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  side: BorderSide(color: Colors.amber, width: 2),
-                ),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [

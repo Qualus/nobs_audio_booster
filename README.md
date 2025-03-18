@@ -1,16 +1,17 @@
 # nobs_audio_booster
+This is a quick and dirty audio booster for android devices.
+Just in case you need to have a louder audio without using an app with 3000 ads and useless premium features.
 
-A new Flutter project.
+
+
 
 ## Getting Started
+Connect your android device in Dev mode to a machine with Flutter installed. Go to the root folder via terminal and run
+flutter install
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+That's it :)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Should I install a software from a random guy?
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Not really,but the code is public and you can check what it does.
